@@ -16,211 +16,188 @@
             padding: 20px;
         }
         .container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            padding: 40px;
             width: 100%;
-            max-width: 420px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .logo {
-            width: 80px; height: 80px;
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            border-radius: 50%;
-            margin: 0 auto 24px;
+            width: 80px;
+            height: 80px;
+            background: rgba(34, 197, 94, 0.15);
+            border-radius: 20px;
+            margin: 0 auto 30px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .logo svg { width: 40px; height: 40px; fill: white; }
-        h1 { color: white; text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-        .subtitle { color: rgba(255, 255, 255, 0.6); text-align: center; font-size: 14px; margin-bottom: 32px; }
-        .form-group { margin-bottom: 16px; }
-        label { display: block; color: rgba(255, 255, 255, 0.8); font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: #22c55e;
+        }
+        h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .form-group { margin-bottom: 20px; }
+        label {
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
         .input-wrapper { position: relative; }
-        input[type="password"], input[type="text"] {
+        input {
             width: 100%;
-            padding: 14px 48px 14px 16px;
+            padding: 14px 45px 14px 16px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px;
             color: white;
             font-size: 16px;
+            transition: all 0.3s ease;
         }
-        input:focus { outline: none; border-color: #4CAF50; background: rgba(255, 255, 255, 0.12); }
-        input::placeholder { color: rgba(255, 255, 255, 0.3); }
+        input:focus {
+            outline: none;
+            border-color: #22c55e;
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+        }
+        input::placeholder { color: rgba(255, 255, 255, 0.4); }
         .toggle-password {
-            position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
-            background: none; border: none; cursor: pointer; padding: 4px;
-        }
-        .toggle-password svg { width: 20px; height: 20px; fill: rgba(255, 255, 255, 0.4); }
-        .requirements { background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 14px; margin-bottom: 24px; }
-        .requirements p { color: rgba(255, 255, 255, 0.5); font-size: 12px; margin-bottom: 8px; }
-        .requirement { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255, 255, 255, 0.5); margin-bottom: 4px; }
-        .requirement.valid { color: #4CAF50; }
-        .requirement svg { width: 14px; height: 14px; flex-shrink: 0; }
-        .submit-btn {
-            width: 100%; padding: 16px;
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            border: none; border-radius: 12px;
-            color: white; font-size: 16px; font-weight: 600;
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
             cursor: pointer;
+            padding: 4px;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .toggle-password:hover { opacity: 1; }
+        .toggle-password svg { width: 20px; height: 20px; fill: white; }
+
+        .requirements {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .requirements p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 13px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .requirement {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+        .requirement:last-child { margin-bottom: 0; }
+        .requirement svg {
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+            fill: currentColor;
+            opacity: 0.7;
+        }
+        .requirement.valid { color: #22c55e; }
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-        .error { background: rgba(244, 67, 54, 0.15); border: 1px solid rgba(244, 67, 54, 0.3); color: #ff6b6b; padding: 14px; border-radius: 10px; font-size: 14px; margin-bottom: 20px; display: none; }
-        .success-container, .expired-container { text-align: center; display: none; }
-        .success-icon, .expired-icon { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; }
-        .success-icon { background: linear-gradient(135deg, #4CAF50, #2E7D32); }
-        .success-icon svg { width: 40px; height: 40px; fill: white; }
-        .expired-icon { background: rgba(244, 67, 54, 0.15); }
-        .expired-icon svg { width: 40px; height: 40px; fill: #ff6b6b; }
-        .success-container h2, .expired-container h2 { color: white; font-size: 24px; margin-bottom: 12px; }
-        .success-container p, .expired-container p { color: rgba(255, 255, 255, 0.6); font-size: 15px; line-height: 1.5; }
-        .loading { display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: white; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+        .submit-btn:not(:disabled):hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3);
+        }
+        .loading {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
         @keyframes spin { to { transform: rotate(360deg); } }
+        .error {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .success-container, .expired-container {
+            text-align: center;
+            display: none;
+        }
+        .success-icon, .expired-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .success-icon { background: rgba(34, 197, 94, 0.15); }
+        .expired-icon { background: rgba(239, 68, 68, 0.15); }
+        .success-icon svg, .expired-icon svg { width: 40px; height: 40px; }
+        .success-icon svg { fill: #22c55e; }
+        .expired-icon svg { fill: #ef4444; }
+        .success-container h2, .expired-container h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .success-container p, .expired-container p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div id="formContainer">
             <div class="logo">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-            <h1>Neues Passwort festlegen</h1>
-            <p class="subtitle">Gib dein neues Passwort für Plantr ein.</p>
-            <div class="error" id="errorMessage"></div>
-            <form id="resetForm">
-                <div class="form-group">
-                    <label>Neues Passwort</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="password" placeholder="Mindestens 6 Zeichen" required>
-                        <button type="button" class="toggle-password" id="toggle1">
-                            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Passwort bestätigen</label>
-                    <div class="input-wrapper">
-                        <input type="password" id="confirmPassword" placeholder="Passwort wiederholen" required>
-                        <button type="button" class="toggle-password" id="toggle2">
-                            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="requirements">
-                    <p>Passwort-Anforderungen:</p>
-                    <div class="requirement" id="reqLength"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Mindestens 6 Zeichen</div>
-                    <div class="requirement" id="reqLower"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ein Kleinbuchstabe</div>
-                    <div class="requirement" id="reqUpper"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ein Großbuchstabe</div>
-                    <div class="requirement" id="reqNumber"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Eine Zahl</div>
-                    <div class="requirement" id="reqSpecial"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Ein Sonderzeichen (!@#$%...)</div>
-                    <div class="requirement" id="reqMatch"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Passwörter stimmen überein</div>
-                </div>
-                <button type="submit" id="submitBtn" class="submit-btn" disabled>Passwort ändern</button>
-            </form>
-        </div>
-        <div class="success-container" id="successContainer">
-            <div class="success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
-            <h2>Passwort geändert! ✓</h2>
-            <p>Dein Passwort wurde erfolgreich aktualisiert.<br>Alle anderen Geräte wurden abgemeldet.<br>Du kannst dich jetzt in Plantr mit deinem neuen Passwort anmelden.</p>
-        </div>
-        <div class="expired-container" id="expiredContainer">
-            <div class="expired-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
-            <h2>Link abgelaufen</h2>
-            <p>Dieser Link ist leider abgelaufen oder ungültig.<br>Bitte fordere in der App einen neuen Passwort-Reset-Link an.</p>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-    (function() {
-        var sbClient = window.supabase.createClient(
-            'https://fsxwzcduvhmhiqfzmslh.supabase.co',
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZzeHd6Y2R1dmhtaGlxZnptc2xoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1OTQxODEsImV4cCI6MjA4MTE3MDE4MX0.FfYWNhE1n6llNSes1jeLwIr2blqqxEZ8rOHejgHOrtE'
-        );
-
-        var pw1 = document.getElementById('password');
-        var pw2 = document.getElementById('confirmPassword');
-        var btn = document.getElementById('submitBtn');
-        var form = document.getElementById('resetForm');
-        var errDiv = document.getElementById('errorMessage');
-
-        function check() {
-            var p = pw1.value;
-            var c = pw2.value;
-            var len = p.length >= 6;
-            var low = /[a-z]/.test(p);
-            var up = /[A-Z]/.test(p);
-            var num = /[0-9]/.test(p);
-            var spec = /[!@#$%^&*(),.?":{}|<>_\-+=\[\]\\\/`~]/.test(p);
-            var match = p === c && c.length > 0;
-
-            document.getElementById('reqLength').className = 'requirement' + (len ? ' valid' : '');
-            document.getElementById('reqLower').className = 'requirement' + (low ? ' valid' : '');
-            document.getElementById('reqUpper').className = 'requirement' + (up ? ' valid' : '');
-            document.getElementById('reqNumber').className = 'requirement' + (num ? ' valid' : '');
-            document.getElementById('reqSpecial').className = 'requirement' + (spec ? ' valid' : '');
-            document.getElementById('reqMatch').className = 'requirement' + (match ? ' valid' : '');
-
-            var ok = len && low && up && num && spec && match;
-            btn.disabled = !ok;
-            return ok;
-        }
-
-        pw1.oninput = check;
-        pw2.oninput = check;
-        pw1.onkeyup = check;
-        pw2.onkeyup = check;
-
-        document.getElementById('toggle1').onclick = function() { pw1.type = pw1.type === 'password' ? 'text' : 'password'; };
-        document.getElementById('toggle2').onclick = function() { pw2.type = pw2.type === 'password' ? 'text' : 'password'; };
-
-        form.onsubmit = async function(e) {
-            e.preventDefault();
-            if (!check()) return;
-            errDiv.style.display = 'none';
-            btn.disabled = true;
-            btn.innerHTML = '<span class="loading"></span>Wird geändert...';
-            try {
-                // Passwort ändern
-                var res = await sbClient.auth.updateUser({ password: pw1.value });
-                if (res.error) throw res.error;
-                
-                // ✅ Alle anderen Sessions ausloggen
-                await sbClient.auth.signOut({ scope: 'others' });
-                
-                document.getElementById('formContainer').style.display = 'none';
-                document.getElementById('successContainer').style.display = 'block';
-            } catch (err) {
-                errDiv.textContent = 'Fehler: ' + (err.message || 'Unbekannt');
-                errDiv.style.display = 'block';
-                btn.disabled = false;
-                btn.innerHTML = 'Passwort ändern';
-            }
-        };
-
-        function showExpired() {
-            document.getElementById('formContainer').style.display = 'none';
-            document.getElementById('expiredContainer').style.display = 'block';
-        }
-
-        (async function init() {
-            var hash = window.location.hash.substring(1);
-            var params = new URLSearchParams(hash);
-            if (params.get('error') || params.get('error_code')) { showExpired(); return; }
-            var token = params.get('access_token');
-            var refresh = params.get('refresh_token');
-            var type = params.get('type');
-            if (!token || type !== 'recovery') { showExpired(); return; }
-            try {
-                var res = await sbClient.auth.setSession({ access_token: token, refresh_token: refresh });
-                if (res.error) { showExpired(); return; }
-            } catch (e) { showExpired(); }
-        })();
-    })();
-    </script>
-</body>
-</html>
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48
