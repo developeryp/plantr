@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="PlantMates – jetzt im App Store herunterladen." />
+  <title>PlantMates – App Store</title>
+
+  <!-- iOS Smart App Banner (optional) -->
+  <meta name="apple-itunes-app" content="app-id=6757171443" />
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --btn: #ffffff;
+      --btnText: #0b1220;
+      --btn2: rgba(255,255,255,0.14);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1000px 600px at 20% 0%, rgba(0,255,140,0.22), transparent 60%),
+                  radial-gradient(900px 650px at 80% 30%, rgba(0,140,255,0.18), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .wrap { width: 100%; max-width: 820px; }
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+    }
+    .top { display:flex; gap:18px; align-items:center; margin-bottom:16px; }
+    .icon {
+      width:64px; height:64px; border-radius:16px;
+      background: rgba(255,255,255,0.14);
+      display:grid; place-items:center;
+      font-weight:700; letter-spacing:0.5px;
+    }
+    h1 { margin:0; font-size:28px; line-height:1.15; }
+    p { margin:10px 0 0; color:var(--muted); line-height:1.55; font-size:16px; }
+    .buttons { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+    a.btn {
+      text-decoration:none;
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:14px 16px; border-radius:14px; font-weight:650;
+      border:1px solid transparent;
+      min-width:220px;
+    }
+    a.primary { background: var(--btn); color: var(--btnText); }
+    a.secondary {
+      background: var(--btn2);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.18);
+      min-width:180px;
+    }
+    .small { margin-top:14px; font-size:13px; color:rgba(255,255,255,0.55); }
+    .row { display:grid; grid-template-columns:1fr; gap:18px; margin-top:18px; }
+    @media (min-width:760px){ .row{ grid-template-columns:1.2fr 0.8fr; } }
+    .box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius:16px;
+      padding:16px;
+    }
+    .badge {
+      display:inline-flex; gap:8px; align-items:center;
+      padding:6px 10px; border-radius:999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.78);
+      font-size:12px;
+    }
+    .divider { height:1px; background: rgba(255,255,255,0.10); margin:14px 0; }
+    .list { margin:0; padding-left:18px; color: rgba(255,255,255,0.72); line-height:1.55; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="top">
+        <div class="icon" aria-hidden="true">PM</div>
+        <div>
+          <h1 id="appName">PlantMates</h1>
+          <p>Tippe auf den Button, um die App im App Store zu öffnen.</p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <a id="appstoreBtn" class="btn primary" href="#" rel="noopener">Im App Store öffnen</a>
+        <a id="secondBtn" class="btn secondary" href="#" rel="noopener" style="display:none;">Mehr erfahren</a>
+      </div>
+
+      <div class="small" id="autoNote" style="display:none;"></div>
+
+      <div class="row">
+        <div class="box">
+          <span class="badge">✅ Schnell • Mobiloptimiert • GitHub Pages</span>
+          <div class="divider"></div>
+          <ul class="list">
+            <li>Ideal als Ziel-URL für Meta Traffic Ads.</li>
+            <li>Optional: Meta/UTM Parameter werden ergänzt, ohne Apple-Parameter zu überschreiben.</li>
+            <li>Optional: Auto-Weiterleitung nach ein paar Sekunden.</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <strong>Datenschutz</strong>
+          <p style="margin-top:8px;">
+            Keine Cookies, keine Tracker – nur ein Link/Redirect zum App Store.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // =======================
+  // ANPASSEN (optional)
+  // =======================
+  const APP_NAME = "PlantMates";
+
+  // Dein App Store Link (so wie du ihn geschickt hast)
+  const APPSTORE_URL = "https://apps.apple.com/app/apple-store/id6757171443?pt=126087453&ct=MetaAds&mt=8";
+
+  // Optional: zweiter Button (z.B. Website). Leer lassen = aus.
+  const SECOND_BUTTON_URL = ""; // z.B. "https://deine-domain.de"
+
+  // Auto-Redirect (0 = aus)
+  const AUTO_REDIRECT_SECONDS = 0; // z.B. 2 oder 3
+
+  // Meta/UTM Parameter von der Landingpage an den App Store Link anhängen
+  // (ohne Apple keys pt/ct/mt zu überschreiben)
+  const FORWARD_QUERY_PARAMS = true;
+
+  // =======================
+  // LOGIK
+  // =======================
+  document.getElementById("appName").textContent = APP_NAME;
+
+  const btn = document.getElementById("appstoreBtn");
+  const secondBtn = document.getElementById("secondBtn");
+  const autoNote = document.getElementById("autoNote");
+
+  function buildTargetUrl() {
+    const url = new URL(APPSTORE_URL);
+
+    if (FORWARD_QUERY_PARAMS) {
+      const qs = new URLSearchParams(window.location.search);
+
+      // Apple Campaign Parameter NICHT überschreiben
+      const protectedKeys = new Set(["pt", "ct", "mt"]);
+
+      for (const [k, v] of qs.entries()) {
+        if (protectedKeys.has(k)) continue;            // schützen
+        if (!url.searchParams.has(k)) {
+          url.searchParams.set(k, v);                  // nur ergänzen
+        }
+      }
+    }
+
+    return url.toString();
+  }
+
+  const target = buildTargetUrl();
+  btn.href = target;
+
+  if (SECOND_BUTTON_URL && SECOND_BUTTON_URL.trim().length > 0) {
+    secondBtn.href = SECOND_BUTTON_URL;
+    secondBtn.style.display = "inline-flex";
+    secondBtn.textContent = "Mehr erfahren";
+  }
+
+  if (AUTO_REDIRECT_SECONDS && AUTO_REDIRECT_SECONDS > 0) {
+    autoNote.style.display = "block";
+    autoNote.textContent = `Du wirst in ${AUTO_REDIRECT_SECONDS} Sekunden automatisch weitergeleitet…`;
+    setTimeout(() => { window.location.href = target; }, AUTO_REDIRECT_SECONDS * 1000);
+  }
+</script>
+</body>
+</html>
