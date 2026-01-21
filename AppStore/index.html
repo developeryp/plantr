@@ -6,11 +6,8 @@
   <title>PlantMates – im App Store</title>
   <meta name="description" content="PlantMates – jetzt im App Store herunterladen." />
 
-  <!-- iOS Smart App Banner -->
+  <!-- Optional: iOS Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=6757171443" />
-
-  <!-- Optionaler Fallback, falls JavaScript deaktiviert ist (statische URL, ohne dynamisches Query-Forwarding) -->
-  <meta http-equiv="refresh" content="0;url=https://apps.apple.com/app/apple-store/id6757171443?pt=126087453&ct=MetaAds&mt=8">
 
   <style>
     :root{
@@ -148,13 +145,6 @@
       .card{ padding: 34px 30px; }
       .badge{ height: 52px; }
     }
-
-    /* Optional: kleines "Weiterleitung..."-Label */
-    .redirecting{
-      margin-top: 10px;
-      font-size: 12.5px;
-      color: rgba(255,255,255,0.55);
-    }
   </style>
 </head>
 
@@ -179,10 +169,6 @@
 
         <!-- Fallback-Button (falls Badge nicht lädt) -->
         <a id="fallbackLink" class="fallback" href="#" rel="noopener">Im App Store öffnen</a>
-
-        <div id="redirecting" class="redirecting" style="display:none;">
-          Weiterleitung zum App Store…
-        </div>
       </div>
 
       <p class="fine">Keine Cookies, kein Tracking – nur Weiterleitung zum App Store.</p>
@@ -191,16 +177,9 @@
 
       <div class="footer">
         <span>© <span id="year"></span> PlantMates</span>
-        <!-- Optional: Links -->
+        <!-- Optional: Links, wenn du willst -->
         <!-- <a href="/Datenschutzerklaerung.html">Datenschutz</a> -->
       </div>
-
-      <noscript>
-        <p class="fine" style="margin-top:14px;">
-          JavaScript ist deaktiviert. Falls du nicht automatisch weitergeleitet wirst, nutze bitte den Button oben
-          oder öffne die Seite erneut mit aktiviertem JavaScript.
-        </p>
-      </noscript>
     </section>
   </main>
 
@@ -210,9 +189,6 @@
 
     // Wenn du wirklich alles clean halten willst: keine Parameter weiterreichen
     const FORWARD_QUERY_PARAMS = false;
-
-    // 0 = sofort, z.B. 600 = kurze Verzögerung (UX-freundlicher)
-    const REDIRECT_DELAY_MS = 0;
 
     function buildTargetUrl() {
       const url = new URL(APPSTORE_URL);
@@ -230,23 +206,9 @@
     }
 
     const target = buildTargetUrl();
-
-    // Links setzen (falls Weiterleitung mal nicht klappt / User abbrechen)
     document.getElementById("appstoreLink").href = target;
     document.getElementById("fallbackLink").href = target;
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Automatische Weiterleitung
-    const redirectLabel = document.getElementById("redirecting");
-    if (REDIRECT_DELAY_MS > 0) redirectLabel.style.display = "block";
-
-    const doRedirect = () => window.location.replace(target);
-
-    if (REDIRECT_DELAY_MS > 0) {
-      setTimeout(doRedirect, REDIRECT_DELAY_MS);
-    } else {
-      doRedirect();
-    }
   </script>
 </body>
 </html>
